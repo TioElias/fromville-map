@@ -1,0 +1,491 @@
+[
+    {
+        "id": "ColonyHouse",
+        "position": [
+            1129.0,
+            1185.0
+        ],
+        "location_name": "1. COLONY HOUSE",
+        "description": "A massive, decaying manor situated on a hill overlooking the town. Led by Donna, it serves as a communal residence for those who value freedom and shared resources over the rigid rules of the Township.",
+        "category": "Safe House",
+        "is_safe_house": true,
+        "images": [
+            "assets/COLONY HOUSE.png",
+            "assets/COLONY HOUSE 1.png",
+            "assets/COLONY HOUSE 2.png",
+            "assets/COLONY HOUSE 4.png",
+            "assets/COLONY HOUSE 5.jpeg"
+        ]
+    },
+    {
+        "id": "GreenHouse",
+        "position": [
+            1184.0,
+            1129.0
+        ],
+        "location_name": "2. GREEN HOUSE",
+        "description": "Located on the grounds of Colony House, this glass structure is the town’s primary source of cultivated food. It represents survival and the fragile hope of the residents, though it is often a target for sabotage or monster-driven psychological warfare.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/GREEN HOUSE.png",
+            "assets/GREEN HOUSE 1.png",
+            "assets/GREEN HOUSE 2.png"
+        ]
+    },
+    {
+        "id": "Shed",
+        "position": [
+            1173.0,
+            1088.0
+        ],
+        "location_name": "3. SHED",
+        "description": "Storage shed near the edge of town.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": []
+    },
+    {
+        "id": "Clinic",
+        "position": [
+            1395.0,
+            1100.0
+        ],
+        "location_name": "4. CLINIC",
+        "description": "Originally a small schoolhouse, this building was converted into a medical clinic managed by Kristi Miller. It is often the site of the series' most gruesome and tense moments",
+        "category": "Safe House",
+        "is_safe_house": true,
+        "images": [
+            "assets/CLINIC.png"
+        ]
+    },
+    {
+        "id": "RootCellar",
+        "position": [
+            1402.0,
+            1209.0
+        ],
+        "location_name": "5. ROOT CELLAR",
+        "description": "Root Cellar – Located within the village. When Jade finds the root cellar in episode 1/3, the town is visible in the background. The back of the church and the blue house next to it can be recognized, suggesting the root cellar is likely along the dirt road leading up from the disused motel pool toward the clinic.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/ROOT CELLAR.png",
+            "assets/ROOT CELLAR 2.png"
+        ]
+    },
+    {
+        "id": "ChoosingStone",
+        "position": [
+            1307.0,
+            1354.0
+        ],
+        "location_name": "6. CHOOSING CEREMONY STONE",
+        "description": "Where newcomers choose their path.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": []
+    },
+    {
+        "id": "Church",
+        "position": [
+            1323.0,
+            1431.0
+        ],
+        "location_name": "7. CHURCH",
+        "description": "A small, white-steepled building once led by Father Khatri. It serves as a spiritual refuge for some, though its basement hides dark secrets and was used as a clandestine holding cell for Sara Myers.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/CHURCH.png",
+            "assets/CHURCH 1.png",
+            "assets/CHURCH 2.png",
+            "assets/CHURCH 3.png",
+            "assets/CHURCH 4.png"
+        ]
+    },
+    {
+        "id": "GreyHouse",
+        "position": [
+            1342.0,
+            1391.0
+        ],
+        "location_name": "8. GREY HOUSE",
+        "description": "These are standardized residential units within the Township. In your Godot project, these can serve as modular environmental assets that define the \"suburban nightmare\" aesthetic of the town center",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": []
+    },
+    {
+        "id": "BlueHouse",
+        "position": [
+            1357.0,
+            1372.0
+        ],
+        "location_name": "9. BLUE HOUSE",
+        "description": "These are standardized residential units within the Township. In your Godot project, these can serve as modular environmental assets that define the \"suburban nightmare\" aesthetic of the town center",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": []
+    },
+    {
+        "id": "Pool",
+        "position": [
+            1385.0,
+            1361.0
+        ],
+        "location_name": "10. POOL",
+        "description": "Abandoned town pool.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/POOL.png",
+            "assets/POOL 1.png",
+            "assets/POOL 2.png"
+        ]
+    },
+    {
+        "id": "LiusHome",
+        "position": [
+            1407.0,
+            1333.0
+        ],
+        "location_name": "11. LIU'S HOME",
+        "description": "The residence of Kenny and his parents. It is a humble, well-kept home that represents the loss of the \"old world\" stability for the Liu family as they struggle with dementia and the town's threats",
+        "category": "Safe House",
+        "is_safe_house": true,
+        "images": [
+            "assets/Liu_House.png"
+        ]
+    },
+    {
+        "id": "Bar",
+        "position": [
+            1476.0,
+            1282.0
+        ],
+        "location_name": "12. BAR",
+        "description": "Local drinking establishment.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/BAR.png",
+            "assets/BARN 1.png",
+            "assets/BARN 2.png",
+            "assets/BARN.png"
+        ]
+    },
+    {
+        "id": "Barn",
+        "position": [
+            1562.0,
+            1270.0
+        ],
+        "location_name": "13. BARN",
+        "description": "The primary location for the town’s livestock, which mysteriously appeared in the woods. It is a place of hard labor and a constant target for the creatures who enjoy tormenting the residents by targeting their food sources.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/BARN.png",
+            "assets/BARN 1.png",
+            "assets/BARN 2.png"
+        ]
+    },
+    {
+        "id": "SheriffOffice",
+        "position": [
+            1464.0,
+            1384.0
+        ],
+        "location_name": "14. SHERIFF'S OFFICE",
+        "description": "Overview\nOnce a small-town post office, this building now serves as the center of law and order in Fromville. It is where Sheriff Boyd Stevens and Deputy Kenny Liu coordinate the town's safety protocols and manage the distribution of supplies. For Boyd, it also serves as a humble home, containing his living quarters and personal office.\n\nKey Features\nThe Holding Cell: A makeshift jail cell used for the town’s \"troublemakers.\" It was famously occupied by Frank Pratt before his execution in \"The Box.\"\n\nThe Strategic Map: Located in Boyd’s office, this map tracks where every resident was driving from before they were taken by the town. It serves as a constant reminder of the impossible geography that connects them all.\n\nThe \"Nights Without Incident\" Sign: A chalkboard displayed outside that once boasted a record of 96 days of safety. Following the arrival of the Matthews family, the count was reset to zero, signaling the end of the town's long period of stability.\n\nThe Box: Located directly across from the station in the playground, this brutal execution device is where rule-breakers are left overnight without a Talisman—a constant visual deterrent visible from Boyd's window.\n\nNotable Lore\nDiscovery of the Talismans: The station became the first truly \"safe\" public building after Boyd discovered the Talismans in the stone hut, allowing the town to transition from hiding in holes to living behind doors.\n\nAdministrative Hub: It is the primary meeting spot for the town’s leadership (Boyd, Kenny, Donna, and Father Khatri) to discuss escape plans and share information about the forest.\n\nPersonal Sanctuary: Boyd keeps his most precious belongings here, including the boat key given to him by his wife, Abby, which symbolizes the dream of the life they lost.",
+        "category": "Safe House",
+        "is_safe_house": true,
+        "images": [
+            "assets/SHERIFF'S OFFICE.png"
+        ]
+    },
+    {
+        "id": "Bus",
+        "position": [
+            1451.0,
+            1405.0
+        ],
+        "location_name": "15. BUS",
+        "description": "The crashed Grand Rapids bus.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/BUS.png"
+        ]
+    },
+    {
+        "id": "MatthewsHome",
+        "position": [
+            1440.0,
+            1428.0
+        ],
+        "location_name": "16. MATTHEWS' HOME",
+        "description": "A modern-looking house that Jim, Tabitha, and Ethan moved into after their arrival. In recent seasons, the basement of this house became a focal point for Tabitha's investigation into the town's subterranean secrets.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/MATTHEWS' HOME.png",
+            "assets/Matthews_House.png"
+        ]
+    },
+    {
+        "id": "Diner",
+        "position": [
+            1416.0,
+            1445.0
+        ],
+        "location_name": "17. DINER",
+        "description": "Run by the Liu family, the Diner is the social heart of the community where people gather to eat, gossip, and process the latest horrors. In Season 4, it carries a heavier atmosphere following the tragic loss of Tian-Chen Liu.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Diner.png",
+            "assets/DINER 2.png",
+            "assets/DINER 3.png"
+        ]
+    },
+    {
+        "id": "MyersHome",
+        "position": [
+            1402.0,
+            1470.0
+        ],
+        "location_name": "18. MYERS' HOME",
+        "description": "The former residence of siblings Sara and Nathan. It is a quiet, isolated house that became a site of suspicion and fear after Sara began hearing the voices that commanded her to kill.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Myers_House.png"
+        ]
+    },
+    {
+        "id": "AbbysGrave",
+        "position": [
+            1171.0,
+            1508.0
+        ],
+        "location_name": "Abby's Grave",
+        "description": "The final resting place of Abby Stevens, Boyd's wife. A solemn reminder of the town's toll on its residents.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Abby's Grave.png",
+            "assets/Abby's Grave 1.png"
+        ]
+    },
+    {
+        "id": "BottleTree",
+        "position": [
+            1572.0,
+            108.0
+        ],
+        "location_name": "Bottle Tree",
+        "description": "A mysterious tree hung with glass bottles, each containing scraps of paper with dates. It is one of the Farway trees.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Bottle Tree.png",
+            "assets/Bottle Tree 1.png",
+            "assets/Bottle Tree 2.png",
+            "assets/Bottle Tree 3.png",
+            "assets/Bottle Tree 4.png",
+            "assets/Bottle Tree 5.png",
+            "assets/Bottle Tree 6.png"
+        ]
+    },
+    {
+        "id": "Brundles",
+        "position": [
+            1302.0,
+            969.0
+        ],
+        "location_name": "Brundles",
+        "description": "The lake area where residents often go for water or to find some peace, though it remains dangerous.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Brundles.png",
+            "assets/Brundles1.png",
+            "assets/Brundles 2.png"
+        ]
+    },
+    {
+        "id": "CarGraveyard",
+        "position": [
+            1397.0,
+            1632.0
+        ],
+        "location_name": "Car Graveyard",
+        "description": "A somber clearing filled with the rusted remains of vehicles belonging to the Township's former residents. While it appears to be a junk pile, it is actually a meticulous—and tragic—act of housekeeping. After the \"Creatures\" wiped out the original population, a young Victor moved every car here because he couldn't bear to look at them while he walked the empty streets.\n\nNote: Not all cars belong to Victor's era. A cluster of vehicles located beyond the rock line predates even his arrival in the late 1970s, suggesting the town's cycle of entrapment goes back much further.\n\nKey Narrative Milestones\nThe Symbol & The Song (Season 2): In exchange for a violin rendition of \"Twinkle, Twinkle Little Star,\" Victor brought Jade Herrera here to discuss the mysterious symbols. This location holds Christopher’s car—the man who once made the town laugh before the symbols \"changed\" him, leading to the massacre.\n\nThe Mother’s Trunk (Season 2): Tabitha Matthews convinced Victor to revisit his repressed memories here. Inside his mother’s old station wagon, Victor rediscovered his sister Eloise’s drawings. These sketches revealed the truth about the Lighthouse and his mother’s failed mission to save the \"children in the tower.\"\n\nA Place of Refuge (Season 3): Overwhelmed by the arrival of his father, Henry, Victor retreated to the graveyard to process his grief. It was here that Sara Myers found him, helping him navigate t",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Car Graveyard.png",
+            "assets/Car Graveyard 1.png",
+            "assets/Car Graveyard 2.png"
+        ]
+    },
+    {
+        "id": "CaveEntry",
+        "position": [
+            1099.0,
+            2030.0
+        ],
+        "location_name": "Cave Entry",
+        "description": "Entrance to the tunnels beneath the town where the creatures sleep during the day.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Cave Entry.png",
+            "assets/Cave Entry 1.png",
+            "assets/Cave Entry 2.png",
+            "assets/Cave Entry 4.png"
+        ]
+    },
+    {
+        "id": "CrashSite",
+        "position": [
+            1880.0,
+            2050.0
+        ],
+        "location_name": "Crash Site",
+        "description": "Where the Matthews' RV and the Jade's car collided upon their arrival.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": []
+    },
+    {
+        "id": "Dungeon",
+        "position": [
+            775.0,
+            1793.0
+        ],
+        "location_name": "Dungeon",
+        "description": "A dark, subterranean prison where Boyd found Martin. It exists in a strange, displaced reality.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Dungeon.png"
+        ]
+    },
+    {
+        "id": "FarwayTree",
+        "position": [
+            1837.0,
+            1375.0
+        ],
+        "location_name": "Farway Tree",
+        "description": "Special trees that transport anything entered into them to a random location in the woods.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Farway Tree.png"
+        ]
+    },
+    {
+        "id": "FarwayBottleTree",
+        "position": [
+            1558.0,
+            2100.0
+        ],
+        "location_name": "Farway/Bottle Tree",
+        "description": "A specific Farway tree decorated with bottles, often leading to important or dangerous locations.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/FarwayBottle Tree.png",
+            "assets/FarwayBottle Tree 1.png"
+        ]
+    },
+    {
+        "id": "Lake",
+        "position": [
+            2151.0,
+            715.0
+        ],
+        "location_name": "Lake",
+        "description": "The large body of water near the town. It holds secrets of the past and is a key landmark.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Lake.png"
+        ]
+    },
+    {
+        "id": "LogCabins",
+        "position": [
+            1913.0,
+            665.0
+        ],
+        "location_name": "Log Cabins",
+        "description": "Overview\nLocated deep within the forest near a large lake, the Settlement is a collection of ancient log cabins that predate the modern Township. It is a place of high tension and heavy lore, surrounded by mysterious Totems that appear to function as a primitive version of the Talismans. Though abandoned, the area is a vital resource for the town, as crops like potatoes and cabbage grow wild here.\n\nKey Features\nThe Totem Perimeter: A series of hand-crafted wooden totems surround the cabins. Jade theorizes these were the original \"Talismans\" used by earlier inhabitants to keep the Creatures at bay.\n\nThe Lake: A nearby body of water where residents go to forage for food when the town’s supplies run low.\n\nThe Bear Trap: A hidden danger in the brush near the cabins. It famously injured Kristi during a foraging expedition, forcing Kenny and Jade to perform an emergency \"field reset\" of her ankle.\n\nNotable Lore\nTabitha’s Dreams: Tabitha reveals she had vivid dreams of this exact location and these specific Totems as a child, long before she ever arrived in the Township. This suggests a deep, multi-generational connection between the residents and the land.\n\nVisions of the Past: While at the Settlement, Jade sees a terrifying vision of a man in 1800s-era clothing with an iron spike driven through his eye. This further confirms that the Settlement likely dates back to the 1860s or earlier.\n\nHistorical Theory: Lore suggests the Settlement may have been the home of a previous \"cycle\" of trapped people who eventually met a violent end, leaving only the cabins and the Totems behind.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Log_Cabins.png",
+            "assets/Log Cabins 1.png"
+        ]
+    },
+    {
+        "id": "Shack",
+        "position": [
+            1707.0,
+            947.0
+        ],
+        "location_name": "Shack",
+        "description": "The Shack is a small wooden shack located at the edge of the Forest. It is largely unused except as a temporary shelter.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Shack.png"
+        ]
+    },
+    {
+        "id": "StoneCircle",
+        "position": [
+            936.0,
+            1403.0
+        ],
+        "location_name": "Stone Circle",
+        "description": "A collection of ancient stones arranged in a circle, possibly linked to the town's original rituals.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Stone Circle.png"
+        ]
+    },
+    {
+        "id": "TalismanTome",
+        "position": [
+            1572.0,
+            537.0
+        ],
+        "location_name": "Talisman Tome",
+        "description": "Overview\nLocated deep within the forest near a large lake, the Settlement is a collection of ancient log cabins that predate the modern Township. It is a place of high tension and heavy lore, surrounded by mysterious Totems that appear to function as a primitive version of the Talismans. Though abandoned, the area is a vital resource for the town, as crops like potatoes and cabbage grow wild here.\n\nKey Features\nThe Totem Perimeter: A series of hand-crafted wooden totems surround the cabins. Jade theorizes these were the original \"Talismans\" used by earlier inhabitants to keep the Creatures at bay.\n\nThe Lake: A nearby body of water where residents go to forage for food when the town’s supplies run low.\n\nThe Bear Trap: A hidden danger in the brush near the cabins. It famously injured Kristi during a foraging expedition, forcing Kenny and Jade to perform an emergency \"field reset\" of her ankle.\n\nNotable Lore\nTabitha’s Dreams: Tabitha reveals she had vivid dreams of this exact location and these specific Totems as a child, long before she ever arrived in the Township. This suggests a deep, multi-generational connection between the residents and the land.\n\nVisions of the Past: While at the Settlement, Jade sees a terrifying vision of a man in 1800s-era clothing with an iron spike driven through his eye. This further confirms that the Settlement likely dates back to the 1860s or earlier.\n\nHistorical Theory: Lore suggests the Settlement may have been the home of a previous \"cycle\" of trapped people who eventually met a violent end, leaving only the cabins and the Totems behind.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Talisman Tome.png"
+        ]
+    },
+    {
+        "id": "VictorHideout",
+        "position": [
+            1272.0,
+            1641.0
+        ],
+        "location_name": "Victor's Hideout Truck",
+        "description": "The abandoned truck where Victor lived for many years alone. It is filled with his drawings and memories.",
+        "category": "Landmark",
+        "is_safe_house": false,
+        "images": [
+            "assets/Victor's Hideout Truck.png"
+        ]
+    }
+]

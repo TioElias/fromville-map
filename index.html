@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fromville Map</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-content">
+                <div class="header">
+                    <h1>FROMVILLE MAP</h1>
+                    <p class="subtitle">INTERACTIVE MAP</p>
+                </div>
+                
+                <div class="header-actions">
+                    <button id="btn-show-all">SHOW ALL</button>
+                    <span class="separator">|</span>
+                    <button id="btn-hide-all">HIDE ALL</button>
+                </div>
+                
+                <div class="search-container">
+                    <input type="text" id="search-bar" placeholder="Search locations...">
+                </div>
+                
+                <div class="filters-container">
+                    <h2 class="filters-title">LOCATIONS</h2>
+                    <label class="filter-toggle">
+                        <span>Safe Houses</span>
+                        <input type="checkbox" id="toggle-safe-houses" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <label class="filter-toggle">
+                        <span>Landmarks</span>
+                        <input type="checkbox" id="toggle-landmarks" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                
+                <div class="location-list-container">
+                    <div id="location-list">
+                        <!-- Location items will be injected here via JS -->
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Map Area -->
+        <main id="map-container">
+            <div id="map"></div>
+        </main>
+
+        <!-- Info Panel (Modal) -->
+        <div id="info-overlay" class="hidden"></div>
+        <div id="info-panel" class="hidden">
+            <div class="image-gallery">
+                <button id="btn-prev-image" class="gallery-nav">&lt;</button>
+                <div id="gallery-container">
+                    <!-- Images will be injected here via JS -->
+                </div>
+                <button id="btn-next-image" class="gallery-nav">&gt;</button>
+                <button id="btn-close-info">X</button>
+            </div>
+            <div class="info-content">
+                <h2 id="info-title">Location Name</h2>
+                <span id="info-category">Category</span>
+                <hr>
+                <p id="info-desc">Description goes here.</p>
+            </div>
+        </div>
+
+        <!-- Fullscreen Image Modal -->
+        <div id="fullscreen-overlay" class="hidden">
+            <img id="fullscreen-image" src="" alt="Fullscreen">
+            <button id="btn-close-fullscreen">X</button>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Custom Logic -->
+    <script src="map-logic.js"></script>
+</body>
+</html>

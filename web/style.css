@@ -485,19 +485,21 @@ body, html {
     animation: markerPulse 3s infinite ease-out;
 }
 
-/* Night Mode Marker States */
+/* Night Mode Marker States - Elevated glowing lighthouse beacon effect */
 .night-mode .custom-marker.safe-house-marker {
-    background-color: #0c1c14;
-    border: 2px solid #22c55e;
-    color: #4ade80;
-    box-shadow: 0 0 20px #22c55e, inset 0 0 5px #22c55e;
-    animation: protectiveShieldPulse 2s infinite ease-in-out;
+    background-color: #10b981 !important; /* solid vibrant green */
+    border: 2.5px solid #ffffff !important; /* white rim to make it pop */
+    color: #022c22 !important; /* dark green text for readability */
+    font-weight: 900 !important;
+    box-shadow: 0 0 25px #10b981, 0 0 50px rgba(16, 185, 129, 0.75), 0 0 100px rgba(16, 185, 129, 0.4), inset 0 0 8px #ffffff !important;
+    animation: protectiveBeaconPulse 1.5s infinite alternate ease-in-out !important;
 }
 
 .night-mode .custom-marker.safe-house-marker::after {
-    border: 2px solid #22c55e;
-    opacity: 0.4;
-    animation: shieldPulseRing 2s infinite ease-out;
+    border: 3px solid #34d399 !important;
+    box-shadow: 0 0 25px #34d399, 0 0 50px rgba(52, 211, 153, 0.5);
+    opacity: 0.8;
+    animation: shieldPulseRing 1.8s infinite ease-out !important;
 }
 
 .night-mode .custom-marker.landmark-marker {
@@ -514,14 +516,20 @@ body, html {
     100% { transform: scale(1.6); opacity: 0; }
 }
 
-@keyframes protectiveShieldPulse {
-    0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(34, 197, 94, 0.7); }
-    50% { transform: scale(1.08); box-shadow: 0 0 28px rgba(34, 197, 94, 0.95), inset 0 0 8px rgba(34, 197, 94, 0.4); }
+@keyframes protectiveBeaconPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 20px #10b981, 0 0 45px rgba(16, 185, 129, 0.6), 0 0 80px rgba(16, 185, 129, 0.3), inset 0 0 4px #ffffff;
+    }
+    100% {
+        transform: scale(1.22);
+        box-shadow: 0 0 40px #34d399, 0 0 80px rgba(52, 211, 153, 0.95), 0 0 140px rgba(52, 211, 153, 0.6), inset 0 0 12px #ffffff;
+    }
 }
 
 @keyframes shieldPulseRing {
-    0% { transform: scale(1); opacity: 0.8; }
-    100% { transform: scale(2.2); opacity: 0; }
+    0% { transform: scale(1); opacity: 0.9; }
+    100% { transform: scale(2.6); opacity: 0; }
 }
 
 @keyframes warningLoomingPulse {
@@ -1066,4 +1074,132 @@ body, html {
     .info-header h2 {
         font-size: 22px;
     }
+}
+
+/* --- CINEMATIC HORROR LOADING SCREEN --- */
+#loading-screen {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle, #0e0505 0%, #030406 100%);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), visibility 1.2s;
+    user-select: none;
+    cursor: pointer;
+}
+
+#loading-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loading-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.flicker-title {
+    font-family: 'Special Elite', cursive, serif;
+    font-size: 56px;
+    letter-spacing: 12px;
+    color: #8b0000;
+    text-shadow: 0 0 10px rgba(139, 0, 0, 0.7), 0 0 30px rgba(139, 0, 0, 0.4);
+    animation: textFlicker 4s infinite alternate;
+    margin: 0;
+}
+
+.talisman-loader {
+    width: 140px;
+    height: 140px;
+    position: relative;
+    margin: 10px 0;
+}
+
+.talisman-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 8px rgba(139, 0, 0, 0.6));
+    animation: talismanPulse 2s infinite ease-in-out;
+}
+
+.talisman-inner-glow {
+    animation: talismanInnerRotate 8s infinite linear;
+    transform-origin: 50% 50%;
+}
+
+.flicker-text {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    min-height: 30px;
+    transition: opacity 0.5s ease-in-out;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.loading-subtip {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    color: #4a5568;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: -10px;
+}
+
+.loading-bar-container {
+    width: 240px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.02);
+    display: none; /* hidden until started */
+}
+
+.loading-bar-container.active {
+    display: block;
+}
+
+.loading-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #8b0000 0%, #d4af37 100%);
+    box-shadow: 0 0 8px #d4af37;
+    transition: width 0.1s linear;
+}
+
+/* Animations */
+@keyframes textFlicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(139, 0, 0, 0.7), 0 0 30px rgba(139, 0, 0, 0.4);
+    }
+    20%, 24%, 55% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+
+@keyframes talismanPulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 8px rgba(139, 0, 0, 0.6));
+    }
+    50% {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 20px rgba(139, 0, 0, 0.95)) drop-shadow(0 0 30px rgba(212, 175, 87, 0.4));
+    }
+}
+
+@keyframes talismanInnerRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

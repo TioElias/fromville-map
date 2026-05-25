@@ -447,8 +447,10 @@ const playlist = [
 ];
 let currentSongIndex = 0;
 
-// Set initial volume
+// Set initial volume and source
 bgAudio.volume = volumeSlider.value;
+bgAudio.src = playlist[0].src;
+bgAudio.load();
 if (nowPlayingEl) {
     nowPlayingEl.innerText = `NOW PLAYING: ${playlist[0].title}`;
 }
@@ -552,5 +554,76 @@ if (sidebarOverlay) {
     sidebarOverlay.addEventListener('click', () => {
         sidebar.classList.remove('open');
         sidebarOverlay.classList.remove('active');
+    });
+}
+
+// --- Cinematic Loading Screen Logic ---
+const loadingScreen = document.getElementById('loading-screen');
+const loadingTip = document.getElementById('loading-tip');
+const loadingProgress = document.getElementById('loading-progress');
+const loadingSubtip = document.querySelector('.loading-subtip');
+const loadingBarContainer = document.querySelector('.loading-bar-container');
+
+let loadingStarted = false;
+
+if (loadingScreen) {
+    loadingScreen.addEventListener('click', () => {
+        if (loadingStarted) return;
+        loadingStarted = true;
+        
+        // Remove general page click play triggers
+        document.removeEventListener('click', playOnInteraction);
+        document.removeEventListener('keydown', playOnInteraction);
+        
+        // Try to play track immediately on this user click context (clearing autoplay block)
+        bgAudio.play()
+            .then(() => {
+                if (bgAudio.muted) {
+                    bgAudio.muted = false;
+                    btnMute.innerText = '🔊';
+                }
+            })
+            .catch(err => console.log("Audio play failed on load:", err));
+        
+        // Reveal loading progress bar
+        if (loadingBarContainer) loadingBarContainer.classList.add('active');
+        if (loadingSubtip) loadingSubtip.innerText = "THE RITUAL HAS BEGUN. DO NOT LOOK OUTSIDE...";
+        
+        // Scary tip updates
+        const tips = [
+            "Searching for Talismans...",
+            "Locking all windows and doors...",
+            "Avoid the whispering trees...",
+            "Night is falling. Keep the Talisman close...",
+            "Safe for tonight. Welcome to Fromville."
+        ];
+        
+        let elapsed = 0;
+        const totalDuration = 4000; // 4 seconds minimum loading
+        const intervalStep = 100; // progress bar updates every 100ms
+        
+        const loadingInterval = setInterval(() => {
+            elapsed += intervalStep;
+            
+            // Calculate percentage
+            const pct = Math.min((elapsed / totalDuration) * 100, 100);
+            if (loadingProgress) {
+                loadingProgress.style.width = `${pct}%`;
+            }
+            
+            // Update tips every second
+            const tipIdx = Math.floor(elapsed / 1000);
+            if (tipIdx < tips.length && loadingTip) {
+                loadingTip.innerText = tips[tipIdx];
+            }
+            
+            // On completion
+            if (elapsed >= totalDuration) {
+                clearInterval(loadingInterval);
+                setTimeout(() => {
+                    loadingScreen.classList.add('fade-out');
+                }, 300);
+            }
+        }, intervalStep);
     });
 }

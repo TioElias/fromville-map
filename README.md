@@ -20,6 +20,16 @@ Para instalar na sessão existente, salve suas edições e interrompa somente a 
 
 A validação local confere todos os links do JSON e o caminho de amostragem no ComfyUI, sem carregar pesos reais. A geração com este workflow precisa ser testada no Kaggle.
 
+## Workflows para testar na interface já aberta, sem DualClock
+
+Baixe e arraste `workflow_singularity_sem_dualclock_acelerado.json` para a tela do ComfyUI. É um grafo novo, com uma imagem de referência, Singularity REF2VA Pruned INT8, Qwen NVFP4 na segunda T4, VAEs INT8/FP32, uma LoRA REF2V turbo 4step v0.1 e uma passagem de Euler nativo + beta. Começa em 608 × 352, 56 frames, 6 passos e seed 42. Selecione sua imagem, confira o nome do checkpoint instalado e revise o prompt. O vídeo usa `SaveVideo` nativo e o diretório de saída já configurado no notebook.
+
+A versão acelerada adiciona `MiniMaxChunkFeedForward` (4 partes), `MiniMaxH3MemoryEfficientSageAttentionPatch` e `MiniMaxLowVRAMAttention` (4 grupos), do KJNodes. SageAttention precisa da biblioteca e dos kernels compatíveis já instalados; reconhecer o nó na interface não garante que a biblioteca esteja disponível. Se falhar nessa dependência, selecione só o nó SageAttention e use Ctrl+B para colocá-lo em bypass. Os patches em partes e o VAE tiled reduzem picos de VRAM, mas podem aumentar o tempo; o nome do arquivo não representa um benchmark de velocidade.
+
+`workflow_singularity_sem_dualclock_base.json` oferece os mesmos pesos, prompt, seed, perfil e VAE tiled, sem depender de KJNodes/SageAttention. Use-o se os nós opcionais não estiverem carregados na sessão, ou para comparar tempo e resultado. Ambos mantêm os carregadores Dual-T4 já criados pelo notebook; importar o JSON não instala pacotes, baixa pesos ou reinicia o servidor. Nenhum dos dois contém um nó DualClock. As LoRAs de velocidade de 4 e 8 passos são alternativas, não são empilhadas. TorchCompile, caches e outras extensões não verificadas na sessão não são adicionados.
+
+Validação: conexões do JSON, valores de widgets e grafo de geração aceito pelo ComfyUI v0.32.0, usando as definições reais dos nós KJ. O teste usa arquivos mínimos somente para validar nomes e tipos; não carrega pesos reais, executa kernels GPU, mede desempenho ou comprova qualidade. A geração e a compatibilidade dos patches com os pesos precisam ser verificadas no Kaggle.
+
 ## Armazenamento e validação
 
 Pesos anexados são reutilizados por symlink. Downloads faltantes vão para `/kaggle/temp`, com verificação do tamanho publicado e do espaço disponível. `/kaggle/working` fica para workflows, logs e os vídeos que forem salvos pela célula de resgate.

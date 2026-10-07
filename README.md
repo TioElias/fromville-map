@@ -12,6 +12,14 @@ Mantém o Qwen NVFP4 e os VAEs INT8/FP32 do notebook enviado. Usa a LoRA **REF2V
 
 As referências a DualClock T8 no JSON antigo não identificam a origem desse plugin. A adaptação usa sampling nativo, como o workflow público do autor. Os nós Dual-T4 existentes são mantidos. O grafo gerado não depende dos nós de upscale, tradução ou vídeo de referência do JSON antigo.
 
+## Alternativa para testar o layout do workflow original
+
+`workflow_singularity_dualclock_compativel.json` mantém o layout e as referências do JSON enviado, mas substitui o T8 ausente pelo nó público [`MiniMaxH3DualClockEulerSampler`](https://github.com/shuaixn/ComfyUI-MiniMaxH3DualClockSampler), com `BasicScheduler` separado, beta e 6 passos. Não é uma implementação recuperada do T8 e não há garantia de resultado equivalente. No ComfyUI com `ModelSamplingAV`, o plugin delega ao Euler nativo. O README desse plugin valida outro conjunto de modelo/LoRA, não este Singularity Pruned.
+
+Para instalar na sessão existente, salve suas edições e interrompa somente a célula que mantém o servidor aberto. Execute `instalar_dualclock_kaggle.py` em uma célula Python, depois execute novamente somente a célula do servidor. O instalador fixa o plugin no commit `986f8e9ebd4477caa6395eead23d968648cc7a7d`, confere o workflow, preserva instalações de outra versão e não reinstala dependências ou pesos. Abra `singularity_original_dualclock_compativel` em Workflows, envie sua imagem e revise o prompt. O perfil inicial é 0.2 MP e 2.3 segundos. Os nós Set/Get, Text e VideoHelperSuite que você instalou continuam necessários; a segunda passagem continua em bypass.
+
+A validação local confere todos os links do JSON e o caminho de amostragem no ComfyUI, sem carregar pesos reais. A geração com este workflow precisa ser testada no Kaggle.
+
 ## Armazenamento e validação
 
 Pesos anexados são reutilizados por symlink. Downloads faltantes vão para `/kaggle/temp`, com verificação do tamanho publicado e do espaço disponível. `/kaggle/working` fica para workflows, logs e os vídeos que forem salvos pela célula de resgate.

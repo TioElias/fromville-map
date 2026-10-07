@@ -17,3 +17,5 @@ Duas T4 não somam VRAM automaticamente. Pruned ainda exige um encoder Qwen3-VL 
 Validação local: formato do notebook, sintaxe Python, grade de frames, bloqueio de download por espaço, roteamento de LoRAs e validação do grafo pelos nós nativos do ComfyUI. A inferência completa e a qualidade da pele não foram testadas aqui: dependem de GPU e pesos no Kaggle.
 
 Os vídeos são exibidos no notebook e salvos em `/kaggle/working/minimax_h3/output`. O servidor é local, sem túnel público. Nenhum modelo, token ou resultado gerado deve ser enviado ao Git.
+
+A instalação recupera falhas de `venv`/`ensurepip` com `virtualenv`, inclusive quando a tentativa anterior deixou um ambiente parcial.

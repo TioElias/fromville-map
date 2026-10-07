@@ -316,7 +316,7 @@
       ],
       "flags": {},
       "order": 6,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
         {
           "name": "model",
@@ -338,7 +338,7 @@
         "aux_id": "kijai/ComfyUI-KJNodes"
       },
       "widgets_values": [],
-      "title": "04 — SageAttention (requer biblioteca instalada)"
+      "title": "04 — SageAttention OPCIONAL — bypass nesta sessão"
     },
     {
       "id": 8,
@@ -1027,7 +1027,7 @@
       "outputs": [],
       "properties": {},
       "widgets_values": [
-        "SEM DUALCLOCK — TESTE KAGGLE T4 × 2\n\nImporte este JSON no ComfyUI atual. Selecione o checkpoint Pruned instalado se o nome for diferente. Envie uma imagem no nó ENVIE SUA IMAGEM AQUI e revise o prompt.\n\nPerfil inicial: 608 × 352, 56 frames (2.33 s), 6 passos beta/euler, seed 42. Para comparar com o outro workflow, use a mesma imagem, prompt e seed. Para testar menor tempo, altere apenas steps para 4; a qualidade pode cair.\n\nModelo INT8 Pruned; encoder Qwen NVFP4 na cuda:1; VAEs INT8/FP32 na cuda:0; uma LoRA REF2V turbo 4step v0.1; uma passagem; VAE tiled para reduzir memória. O encoder e os VAEs cabem em placas distintas; a VRAM das duas T4 não vira um único bloco de 30 GB.\n\nVERSÃO KJ: FFN em 4 partes, SageAttention e atenção em 4 grupos. Estes patches reduzem picos de memória, mas podem aumentar tempo. Se algum nó não estiver disponível, use a versão BASE: ela não exige KJNodes. Se SageAttention acusar biblioteca/arquitetura ausente, selecione somente o nó SageAttention e use Ctrl+B (bypass); não apague suas conexões.\n\nSem teste de geração com pesos reais neste ambiente. Este arquivo não instala pacotes nem altera o servidor. O vídeo fica no diretório de saída configurado pelo notebook; use a célula de resgate para copiá-lo para /kaggle/working."
+        "SEM DUALCLOCK — TESTE KAGGLE T4 × 2\n\nImporte este JSON no ComfyUI atual. Selecione o checkpoint Pruned instalado se o nome for diferente. Envie uma imagem no nó ENVIE SUA IMAGEM AQUI e revise o prompt.\n\nPerfil inicial: 608 × 352, 56 frames (2.33 s), 6 passos beta/euler, seed 42. Para comparar com o outro workflow, use a mesma imagem, prompt e seed. Para testar menor tempo, altere apenas steps para 4; a qualidade pode cair.\n\nModelo INT8 Pruned; encoder Qwen NVFP4 na cuda:1; VAEs INT8/FP32 na cuda:0; uma LoRA REF2V turbo 4step v0.1; uma passagem; VAE tiled para reduzir memória. O encoder e os VAEs cabem em placas distintas; a VRAM das duas T4 não vira um único bloco de 30 GB.\n\nVERSÃO KJ: FFN em 4 partes e atenção em 4 grupos ativos. SageAttention fica em BYPASS (roxo) porque a sessão reportou biblioteca/arquitetura indisponível. Não é necessário instalá-lo para testar: o modelo atravessa esse nó sem executar o patch. Estes patches reduzem picos de memória, mas podem aumentar tempo. Se algum nó KJ não estiver disponível, use a versão BASE. Ative SageAttention apenas depois de verificar a biblioteca e reiniciar o servidor; não há suporte validado nesta sessão.\n\nSem teste de geração com pesos reais neste ambiente. Este arquivo não instala pacotes nem altera o servidor. O vídeo fica no diretório de saída configurado pelo notebook; use a célula de resgate para copiá-lo para /kaggle/working."
       ],
       "title": "COMO TESTAR",
       "color": "#432",
@@ -1240,13 +1240,15 @@
       "fps": 24,
       "sampling": "native euler + beta",
       "inference_tested": false,
-      "variant": "kj_memory"
+      "variant": "kj_memory",
+      "sageattention": "bypassed: unavailable in reported Kaggle session"
     },
     "acceleration_notes": [
       "One speed LoRA only. Quantized checkpoint/encoder/VAEs do not add GPU memory across cards.",
       "Kernels/offload use the already-running server configuration; this JSON does not install dependencies.",
       "SageAttention and KJ memory patches are optional. Memory-saving patches may slow down sampling.",
-      "On a newer ComfyUI, native ModelSamplingAV handles joint audio/video sampling."
+      "On a newer ComfyUI, native ModelSamplingAV handles joint audio/video sampling.",
+      "SageAttention is bypassed by default after the Kaggle import/architecture error. FFN chunking and low-VRAM attention remain active."
     ]
   },
   "version": 0.4
